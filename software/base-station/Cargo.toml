@@ -1,0 +1,20 @@
+[package]
+name = "taiga-base"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { workspace = true }
+axum = { workspace = true, features = ["macros"] }
+sqlx = { workspace = true, features = ["chrono", "uuid"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.0", features = ["serde"] }
+image = { workspace = true }
+kamadak-exif = "0.5"
+anyhow = "1.0"
+clap = { version = "4.0", features = ["derive"] }
+

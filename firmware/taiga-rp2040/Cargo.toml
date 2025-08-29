@@ -1,0 +1,31 @@
+[package]
+name = "taiga-rp2040"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["camera-node"]
+camera-node = []
+base-station = ["bme280", "shared-bus"]
+
+[dependencies]
+embassy-executor = { workspace = true, features = ["arch-cortex-m", "executor-thread", "defmt", "integrated-timers"] }
+embassy-time = { workspace = true, features = ["defmt", "defmt-timestamp-uptime"] }
+embassy-rp = { version = "0.1", features = ["defmt", "unstable-pac", "time-driver", "critical-section-impl"] }
+embassy-sync = { workspace = true }
+embedded-hal = { workspace = true }
+embedded-hal-async = { workspace = true }
+serde = { workspace = true, default-features = false, features = ["derive"] }
+heapless = { workspace = true }
+fixed = { workspace = true }
+postcard = { version = "1.0", default-features = false, features = ["heapless"] }
+defmt = "0.3"
+defmt-rtt = "0.4"
+panic-probe = { version = "0.3", features = ["print-defmt"] }
+cortex-m-rt = "0.7"
+cortex-m = "0.7"
+
+# Optional dependencies for base station
+bme280 = { version = "0.5", default-features = false, optional = true }
+shared-bus = { version = "0.3", default-features = false, optional = true }
+

@@ -1,0 +1,9 @@
+[workspace]
+members = [
+    "firmware",
+    "software"  
+]
+resolver = "2"
+
+# Virtual workspace - no shared dependencies to avoid conflicts
+# Use ./build.sh script for easy building of all components

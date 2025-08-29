@@ -1,0 +1,12 @@
+[build]
+target = "xtensa-esp32s3-none-elf"
+
+[target.xtensa-esp32s3-none-elf]
+runner = "espflash flash --monitor"
+
+[env]
+ESP_IDF_VERSION = { value = "v5.1.5" }
+
+[unstable]
+build-std = ["core", "alloc"]
+build-std-features = ["panic_immediate_abort"]
